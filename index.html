@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maryam Ahmed Thabet — Computers & Information graduate, national volleyball athlete, tech & marketing enthusiast. Portfolio, projects, and CV." />
+  <meta name="author" content="Maryam Ahmed Thabet" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Maryam Ahmed Thabet — Portfolio" />
+  <meta property="og:description" content="Computers & Information Graduate | National Volleyball Athlete | Tech & Marketing Enthusiast" />
+  <meta property="og:type" content="website" />
+  <!-- Insert Image Here: social preview image (og:image) — optional -->
+
+  <title>Maryam Ahmed Thabet — Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='sans-serif' font-weight='bold' fill='%232dd4bf'>M</text></svg>" />
+</head>
+<body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="Home">
+        <span class="nav__logo-mark">MAT</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#journey" class="nav__link">Journey</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#resume" class="nav__link">Resume</a>
+        <a href="#contact" class="nav__link nav__link--cta">Contact</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <!-- Animated background blobs -->
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--teal"></span>
+        <span class="blob blob--gold"></span>
+        <span class="blob blob--red"></span>
+        <div class="grid-overlay"></div>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow reveal" data-reveal>
+            <span class="dot"></span> Available for opportunities
+          </p>
+
+          <h1 class="hero__title">
+            <span class="line"><span class="line__inner">Maryam Ahmed</span></span>
+            <span class="line"><span class="line__inner">Thabet</span></span>
+          </h1>
+
+          <p class="hero__name-ar reveal" data-reveal data-reveal-delay="120" dir="rtl" lang="ar">مريم أحمد ثابت</p>
+
+          <p class="hero__headline reveal" data-reveal data-reveal-delay="200">
+            <span class="hl">Computers &amp; Information Graduate</span>
+            <span class="sep">•</span>
+            <span class="hl hl--red">National Volleyball Athlete</span>
+            <span class="sep">•</span>
+            <span class="hl hl--gold">Tech &amp; Marketing Enthusiast</span>
+          </p>
+
+          <div class="hero__cta reveal" data-reveal data-reveal-delay="300">
+            <a href="#projects" class="btn btn--primary">
+              View My Work
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <!-- CV download — links to copied PDF in /cv -->
+            <a href="cv/mariamthabetCV.pdf" download class="btn btn--ghost">
+              Download CV
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+            </a>
+          </div>
+
+          <ul class="hero__socials reveal" data-reveal data-reveal-delay="380">
+            <li><a href="https://www.linkedin.com/in/mariam-thabet-a01641265" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></li>
+            <li><a href="mailto:mariamthabet2003@gmail.com" aria-label="Email">Email</a></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal" data-reveal data-reveal-delay="240">
+          <div class="avatar">
+            <div class="avatar__ring"></div>
+            <div class="avatar__glow"></div>
+            <!-- Insert Image Here: profile photo -> images/profile.png -->
+            <img src="images/profile.png" alt="Portrait of Maryam Ahmed Thabet" class="avatar__img" loading="eager" />
+            <span class="avatar__badge avatar__badge--1">🏐 National Team</span>
+            <span class="avatar__badge avatar__badge--2">💻 CS Graduate</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Scroll down">
+        <span class="mouse"><span></span></span>
+        <span class="hero__scroll-text">Scroll</span>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="eyebrow">01 — About</span>
+          <h2 class="section__title">Where technology meets <span class="grad-text">elite athletics</span></h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__lead" data-reveal>
+            <p>
+              I'm a forward-thinking <strong>Information Systems &amp; Computer Science</strong> professional
+              who blends technology with business — from network administration and data management to
+              a strong foundation in <strong>AI and cybersecurity</strong>. I love designing innovative,
+              sustainable solutions that drive digital transformation and sharpen decision-making.
+            </p>
+            <p>
+              Off the screen, I compete as a <strong>professional volleyball player</strong> for Al Ahly SC
+              and the Egyptian National Team. The same discipline, focus, and teamwork that power my game
+              shape how I build, learn, and lead in tech and marketing.
+            </p>
+          </div>
+
+          <div class="about__stats" data-reveal>
+            <!-- Stat numbers are editable placeholders — adjust the data-count values -->
+            <div class="stat glass">
+              <span class="stat__num" data-count="10" data-suffix="+">0</span>
+              <span class="stat__label">Years on the court</span>
+            </div>
+            <div class="stat glass">
+              <span class="stat__num" data-count="5" data-suffix="+">0</span>
+              <span class="stat__label">Trainings &amp; courses</span>
+            </div>
+            <div class="stat glass">
+              <span class="stat__num" data-count="2" data-suffix="">0</span>
+              <span class="stat__label">Languages (AR / EN)</span>
+            </div>
+            <div class="stat glass">
+              <span class="stat__num" data-count="100" data-suffix="%">0</span>
+              <span class="stat__label">Dedication</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== JOURNEY (Education x Athletics) ===================== -->
+    <section class="section journey" id="journey">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="eyebrow">02 — Journey</span>
+          <h2 class="section__title">A dual path: <span class="grad-text">academics &amp; the court</span></h2>
+          <p class="section__sub">Balancing a Computer Science degree with a professional athletic career.</p>
+        </div>
+
+        <div class="journey__split">
+          <!-- Academic column -->
+          <div class="journey__col journey__col--edu">
+            <div class="journey__col-head">
+              <span class="journey__icon">🎓</span>
+              <h3>Academic Life</h3>
+            </div>
+
+            <div class="tcard glass" data-reveal>
+              <span class="tcard__date">2020 — 2024</span>
+              <h4 class="tcard__title">Ain Shams University</h4>
+              <p class="tcard__org">Faculty of Computer &amp; Information Science</p>
+              <p class="tcard__desc">
+                Bachelor of Computer Science &amp; Information Technology — specialization in
+                <strong>Information Systems</strong>. GPA 2.543 / 4.
+              </p>
+            </div>
+
+            <div class="tcard glass" data-reveal>
+              <span class="tcard__date">Graduation Project · Grade B+</span>
+              <h4 class="tcard__title">Auction Application</h4>
+              <p class="tcard__org">Java desktop application</p>
+              <p class="tcard__desc">
+                A fully functional online auction system with live bidding and chat.
+                <a href="#projects" class="inline-link">See the project ↓</a>
+              </p>
+            </div>
+
+            <figure class="journey__photo glass" data-reveal>
+              <!-- Insert Image Here: graduation photo -> images/graduation.png -->
+              <img src="images/graduation.png" alt="Maryam at her university graduation" loading="lazy" />
+              <figcaption>Graduation — Ain Shams University</figcaption>
+            </figure>
+          </div>
+
+          <!-- Center divider -->
+          <div class="journey__divider" aria-hidden="true"><span></span></div>
+
+          <!-- Athletic column -->
+          <div class="journey__col journey__col--sport">
+            <div class="journey__col-head">
+              <span class="journey__icon">🏐</span>
+              <h3>Athletic Life</h3>
+            </div>
+
+            <div class="tcard glass tcard--red" data-reveal>
+              <span class="tcard__date">Professional Career</span>
+              <h4 class="tcard__title">Al Ahly SC <span dir="rtl" lang="ar" class="ar">النادي الأهلي</span></h4>
+              <p class="tcard__org">Volleyball Player</p>
+              <p class="tcard__desc">
+                Competing at the highest club level in Egypt with one of Africa's most decorated sports clubs.
+                <!-- Edit: add specific seasons / titles here -->
+              </p>
+            </div>
+
+            <div class="tcard glass tcard--gold" data-reveal>
+              <span class="tcard__date">National Representation</span>
+              <h4 class="tcard__title">Egypt National Team <span dir="rtl" lang="ar" class="ar">منتخب مصر</span></h4>
+              <p class="tcard__org">Volleyball Player</p>
+              <p class="tcard__desc">
+                Proudly representing Egypt on the national stage.
+                <!-- Edit: add caps, tournaments, medals here -->
+              </p>
+            </div>
+
+            <figure class="journey__photo glass" data-reveal>
+              <!-- Insert Image Here: volleyball / league photo -> images/volleyball.jpeg -->
+              <img src="images/volleyball.jpeg" alt="Maryam playing volleyball in a league match" loading="lazy" />
+              <figcaption>League match action</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="eyebrow">03 — Projects</span>
+          <h2 class="section__title">Featured <span class="grad-text">work</span></h2>
+        </div>
+
+        <article class="project glass" data-reveal>
+          <div class="project__main">
+            <div class="project__info">
+              <div class="project__tags">
+                <span class="tag">Java</span>
+                <span class="tag">Desktop App</span>
+                <span class="tag">Graduation Project</span>
+                <span class="tag tag--accent">Grade B+</span>
+              </div>
+
+              <h3 class="project__title">Auction Application</h3>
+              <p class="project__desc">
+                A fully functional online auction platform where users browse products, place live bids,
+                and chat in real time. Built end-to-end in <strong>Java</strong> as my graduation project.
+              </p>
+
+              <div class="project__cols">
+                <div>
+                  <h4 class="project__subhead">Key Features</h4>
+                  <ul class="ticklist">
+                    <li>User registration &amp; authentication</li>
+                    <li>Browse &amp; search product listings</li>
+                    <li>Real-time bidding with live price updates</li>
+                    <li>Integrated live chat between users</li>
+                    <li>Bid history &amp; auction status tracking</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="project__subhead">Architecture</h4>
+                  <!-- Edit: refine architecture details to match your build -->
+                  <ul class="ticklist ticklist--muted">
+                    <li>Java client application (Swing UI)</li>
+                    <li>Layered design: UI · logic · data</li>
+                    <li>Database-backed persistence</li>
+                    <li>Event-driven bid &amp; chat updates</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="project__links">
+                <!-- Edit: add a GitHub / demo link if available -->
+                <a href="#" class="btn btn--small btn--ghost" aria-disabled="true">Source (add link)</a>
+              </div>
+            </div>
+
+            <div class="project__gallery">
+              <!-- Insert Image Here: auction screenshots -> images/auction-*.png -->
+              <button class="shot" data-lightbox="images/auction-home.png" aria-label="Open home screen screenshot">
+                <img src="images/auction-home.png" alt="Auction app — home screen" loading="lazy" />
+                <span class="shot__cap">Home</span>
+              </button>
+              <button class="shot" data-lightbox="images/auction-products.png" aria-label="Open products screen screenshot">
+                <img src="images/auction-products.png" alt="Auction app — products screen" loading="lazy" />
+                <span class="shot__cap">Products</span>
+              </button>
+              <button class="shot" data-lightbox="images/auction-livechat.png" aria-label="Open live chat screenshot">
+                <img src="images/auction-livechat.png" alt="Auction app — live chat screen" loading="lazy" />
+                <span class="shot__cap">Live Chat</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE & TRAINING ===================== -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="eyebrow">04 — Experience &amp; Training</span>
+          <h2 class="section__title">Professional <span class="grad-text">growth</span></h2>
+        </div>
+
+        <div class="exp__grid">
+          <article class="exp-card glass exp-card--feature" data-reveal>
+            <span class="exp-card__now">Current</span>
+            <h3 class="exp-card__role">Evolve</h3>
+            <p class="exp-card__meta">Professional role · ongoing</p>
+            <p class="exp-card__desc">
+              Currently growing my career at <strong>Evolve</strong> while sharpening my edge with a
+              professional <strong>Digital Marketing</strong> course — pairing technical depth with
+              modern marketing skills.
+            </p>
+            <div class="exp-card__chips">
+              <span class="chip">Digital Marketing Course</span>
+              <span class="chip">Continuous Learning</span>
+            </div>
+          </article>
+
+          <article class="exp-card glass" data-reveal>
+            <h3 class="exp-card__role">Sales — Ready Call</h3>
+            <p class="exp-card__meta">Startup · Saudi Arabia 🇸🇦</p>
+            <p class="exp-card__desc">
+              Worked in sales for <strong>Ready Call</strong>, a Saudi-based startup — building client
+              relationships and communication skills in a fast-paced startup environment.
+            </p>
+          </article>
+
+          <article class="exp-card glass exp-card--cyber" data-reveal>
+            <span class="exp-card__shield">🛡️</span>
+            <h3 class="exp-card__role">Cyber Security Training</h3>
+            <p class="exp-card__meta">Security fundamentals &amp; ethical hacking</p>
+            <p class="exp-card__desc">
+              Completed hands-on cyber security training — including an
+              <strong>Android App Hacking — Black Belt</strong> course — building practical skills
+              in security protocols and threat analysis.
+            </p>
+          </article>
+        </div>
+
+        <!-- Training badges -->
+        <div class="badges" data-reveal>
+          <h4 class="badges__title">Trainings &amp; Certifications</h4>
+          <div class="badges__row">
+            <span class="badge">🛡️ Cyber Security</span>
+            <span class="badge">🥋 Android App Hacking — Black Belt</span>
+            <span class="badge">📱 Android Development <em>2021</em></span>
+            <span class="badge">🧪 Software Testing <em>2020</em></span>
+            <span class="badge">📈 Digital Marketing</span>
+          </div>
+        </div>
+
+        <!-- Skills + Languages + Activity -->
+        <div class="meta-grid">
+          <div class="meta-card glass" data-reveal>
+            <h4 class="meta-card__title">Technical Skills</h4>
+            <div class="skills">
+              <span class="skill">C</span><span class="skill">C++</span><span class="skill">C#</span>
+              <span class="skill">Python</span><span class="skill">Java</span>
+              <span class="skill">Problem Solving</span><span class="skill">Microsoft Office</span>
+              <span class="skill">Google Workspace</span><span class="skill">Data Management</span>
+            </div>
+            <h4 class="meta-card__title meta-card__title--mt">Core Strengths</h4>
+            <div class="skills skills--soft">
+              <span class="skill">Communication</span><span class="skill">Leadership</span>
+              <span class="skill">Teamwork</span><span class="skill">Creativity</span>
+              <span class="skill">Organization</span>
+            </div>
+          </div>
+
+          <div class="meta-card glass" data-reveal>
+            <h4 class="meta-card__title">Languages</h4>
+            <div class="lang">
+              <div class="lang__row">
+                <span class="lang__name">Arabic</span><span class="lang__level">Native</span>
+              </div>
+              <div class="lang__bar"><i style="width:100%"></i></div>
+            </div>
+            <div class="lang">
+              <div class="lang__row">
+                <span class="lang__name">English</span><span class="lang__level">Fluent</span>
+              </div>
+              <div class="lang__bar"><i style="width:90%"></i></div>
+            </div>
+
+            <h4 class="meta-card__title meta-card__title--mt">Student Activity</h4>
+            <p class="meta-card__text">
+              <strong>ApplAi (2022)</strong> — Public Relations. Built strategic relationships with
+              partners &amp; sponsors and ran multi-channel PR campaigns that boosted student engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESUME / CV ===================== -->
+    <section class="section resume" id="resume">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <span class="eyebrow">05 — Resume</span>
+          <h2 class="section__title">My <span class="grad-text">CV</span></h2>
+        </div>
+
+        <div class="resume__wrap" data-reveal>
+          <div class="resume__preview glass">
+            <div class="cv-doc">
+              <div class="cv-doc__head">
+                <h3>Mariam Ahmed Thabet</h3>
+                <p>Information Systems · Computer Science</p>
+              </div>
+              <div class="cv-doc__lines">
+                <span></span><span></span><span class="short"></span>
+                <span></span><span></span><span class="short"></span>
+                <span></span><span class="short"></span>
+              </div>
+              <span class="cv-doc__stamp">PDF</span>
+            </div>
+          </div>
+
+          <div class="resume__cta">
+            <h3>Get the full picture</h3>
+            <p>
+              Download my complete CV — education, technical skills, trainings, work experience,
+              languages, and activities, all in one place.
+            </p>
+            <!-- CV download — replace cv/mariamthabetCV.pdf to update -->
+            <a href="cv/mariamthabetCV.pdf" download class="btn btn--primary btn--lg">
+              Download CV (PDF)
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+            </a>
+            <a href="cv/mariamthabetCV.pdf" target="_blank" rel="noopener" class="resume__view">or view in browser ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section__head section__head--center" data-reveal>
+          <span class="eyebrow">06 — Contact</span>
+          <h2 class="section__title">Let's <span class="grad-text">connect</span></h2>
+          <p class="section__sub">Open to opportunities in tech, marketing, and beyond.</p>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__links" data-reveal>
+            <a href="mailto:mariamthabet2003@gmail.com" class="contact__link glass">
+              <span class="contact__ic">✉️</span>
+              <span class="contact__txt"><strong>Email</strong>mariamthabet2003@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/mariam-thabet-a01641265" target="_blank" rel="noopener" class="contact__link glass">
+              <span class="contact__ic">in</span>
+              <span class="contact__txt"><strong>LinkedIn</strong>mariam-thabet-a01641265</span>
+            </a>
+            <!-- Optional: phone — remove this block to hide it publicly -->
+            <a href="tel:+201065002001" class="contact__link glass">
+              <span class="contact__ic">📞</span>
+              <span class="contact__txt"><strong>Phone</strong>+20 106 500 2001</span>
+            </a>
+            <div class="contact__link glass contact__link--static">
+              <span class="contact__ic">📍</span>
+              <span class="contact__txt"><strong>Location</strong>Cairo, Egypt</span>
+            </div>
+          </div>
+
+          <!-- Contact form. Static-site friendly: opens the user's mail client via JS.
+               To collect submissions server-side instead, set action to a Formspree
+               endpoint (https://formspree.io) and method="POST". -->
+          <form class="contact__form glass" id="contactForm" data-reveal novalidate>
+            <div class="field">
+              <input type="text" id="cf-name" name="name" required placeholder=" " />
+              <label for="cf-name">Your name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="cf-email" name="email" required placeholder=" " />
+              <label for="cf-email">Your email</label>
+            </div>
+            <div class="field">
+              <textarea id="cf-msg" name="message" rows="4" required placeholder=" "></textarea>
+              <label for="cf-msg">Message</label>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">
+              Send Message
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            <p class="contact__note" id="formNote" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#hero" class="footer__logo">MAT</a>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer__copy">© <span id="year">2026</span> Maryam Ahmed Thabet. Crafted with care.</p>
+    </div>
+    <a href="#hero" class="to-top" aria-label="Back to top">↑</a>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+    <img src="" alt="Project screenshot enlarged" id="lightboxImg" />
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
