@@ -1,6 +1,6 @@
-# Maryam Ahmed Thabet — Portfolio
+# Mariam Ahmed Thabet — Portfolio
 
-A personal portfolio website for **Maryam Ahmed Thabet** — Computers & Information graduate,
+A personal portfolio website for **Mariam Ahmed Thabet** — Computers & Information graduate,
 national volleyball athlete, and tech & marketing enthusiast.
 
 Built as a fast, zero-build static site with **HTML + CSS + vanilla JavaScript**. Features a dark

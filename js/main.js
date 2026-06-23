@@ -1,5 +1,5 @@
 /* =================================================================
-   Maryam Ahmed Thabet — Portfolio
+   Mariam Ahmed Thabet — Portfolio
    Interactions: scroll reveal, nav, scroll-spy, progress bar,
    stat counters, language bars, lightbox, contact form.
    Vanilla JS, no dependencies.
