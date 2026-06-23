@@ -176,34 +176,72 @@
   if (lightbox) lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
 
-  /* ---------- Contact form (mailto-based; static-site friendly) ---------- */
+  /* ---------- Contact form (posts to /api/contact — Nodemailer) ---------- */
   const form = $("#contactForm");
   const note = $("#formNote");
+
+  // Localized status messages (follows the active language from i18n.js).
+  const MSG = {
+    en: {
+      fill: "Please fill in all fields.",
+      email: "Please enter a valid email address.",
+      sending: "Sending your message…",
+      sendingBtn: "Sending…",
+      ok: "Thanks! Your message has been sent. ✅",
+      fail: "Something went wrong. Please try again.",
+      net: "Network error — please try again, or email mariamthabet2003@gmail.com directly.",
+    },
+    ar: {
+      fill: "يرجى ملء جميع الحقول.",
+      email: "يرجى إدخال بريد إلكتروني صحيح.",
+      sending: "جارٍ إرسال رسالتك…",
+      sendingBtn: "جارٍ الإرسال…",
+      ok: "شكرًا! تم إرسال رسالتك بنجاح. ✅",
+      fail: "حدث خطأ ما. يُرجى المحاولة مرة أخرى.",
+      net: "خطأ في الشبكة — حاول مجددًا أو راسل mariamthabet2003@gmail.com مباشرة.",
+    },
+  };
+  const t = (key) => (MSG[window.__lang] || MSG.en)[key];
+
+  function setNote(text, cls) {
+    if (note) { note.textContent = text; note.className = "contact__note " + (cls || ""); }
+  }
+
   if (form) {
-    form.addEventListener("submit", (e) => {
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const name = $("#cf-name").value.trim();
       const email = $("#cf-email").value.trim();
       const msg = $("#cf-msg").value.trim();
 
-      if (!name || !email || !msg) {
-        if (note) { note.textContent = "Please fill in all fields."; note.className = "contact__note err"; }
-        return;
-      }
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      if (!emailOk) {
-        if (note) { note.textContent = "Please enter a valid email address."; note.className = "contact__note err"; }
-        return;
-      }
+      if (!name || !email || !msg) { setNote(t("fill"), "err"); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setNote(t("email"), "err"); return; }
 
-      // Build a mailto so it works without a backend.
-      // To collect submissions server-side, swap this for a Formspree POST.
-      const subject = encodeURIComponent(`Portfolio message from ${name}`);
-      const body = encodeURIComponent(`${msg}\n\n— ${name}\n${email}`);
-      window.location.href = `mailto:mariamthabet2003@gmail.com?subject=${subject}&body=${body}`;
+      const originalBtn = submitBtn ? submitBtn.innerHTML : "";
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = "0.7"; submitBtn.textContent = t("sendingBtn"); }
+      setNote(t("sending"), "");
 
-      if (note) { note.textContent = "Opening your email app…"; note.className = "contact__note ok"; }
-      form.reset();
+      try {
+        const resp = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, message: msg }),
+        });
+        const data = await resp.json().catch(() => ({}));
+
+        if (resp.ok && data.ok) {
+          setNote(t("ok"), "ok");
+          form.reset();
+        } else {
+          setNote(data && data.error ? data.error : t("fail"), "err");
+        }
+      } catch (err) {
+        setNote(t("net"), "err");
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = ""; submitBtn.innerHTML = originalBtn; }
+      }
     });
   }
 })();

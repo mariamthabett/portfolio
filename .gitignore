@@ -1,1 +1,12 @@
 .claude/
+
+# Dependencies
+node_modules/
+
+# Local env / secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel

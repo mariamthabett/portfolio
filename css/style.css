@@ -562,6 +562,51 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .project__gallery { grid-template-columns: 1fr 1fr; }
 }
 
+/* ====================== LANGUAGE TOGGLE ====================== */
+.nav__actions { display: flex; align-items: center; gap: 10px; }
+.lang-toggle {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 14px; border-radius: 100px;
+  font-family: inherit; font-size: 0.85rem; font-weight: 600;
+  color: var(--text); background: var(--glass); border: 1px solid var(--glass-brd-hi);
+  transition: transform 0.3s var(--ease), border-color 0.3s, color 0.3s;
+}
+.lang-toggle:hover { transform: translateY(-2px); border-color: var(--violet); color: var(--violet); }
+.lang-toggle svg { opacity: 0.85; }
+#langToggleLabel { font-family: var(--font-ar); }
+
+/* ====================== RTL (ARABIC) ====================== */
+[lang="ar"] body,
+[lang="ar"] .hero__title,
+[lang="ar"] .section__title,
+[lang="ar"] .project__title,
+[lang="ar"] .exp-card__role,
+[lang="ar"] .resume__cta h3,
+[lang="ar"] .tcard__title,
+[lang="ar"] .journey__col-head h3 { font-family: var(--font-ar); }
+[lang="ar"] .hero__title { letter-spacing: 0; line-height: 1.14; }
+[lang="ar"] .hero__name-ar { font-family: var(--font); } /* English romanization line */
+
+/* mirror timeline accents + alignment */
+[dir="rtl"] .tcard { border-left: none; border-right: 3px solid var(--violet); }
+[dir="rtl"] .tcard:hover { transform: translateX(-6px); }
+[dir="rtl"] .journey__col--sport .tcard { border-right: none; border-left: 3px solid var(--rose); text-align: right; }
+[dir="rtl"] .journey__col--sport .tcard:hover { transform: translateX(6px); }
+[dir="rtl"] .tcard--gold { border-left-color: var(--gold) !important; border-right-color: transparent !important; }
+[dir="rtl"] .journey__col--sport .journey__col-head { justify-content: flex-start; text-align: right; }
+
+/* mirror hover shifts + decorative positions */
+[dir="rtl"] .contact__link:not(.contact__link--static):hover { transform: translateX(-8px); }
+[dir="rtl"] .tcard__title .ar { margin-left: 0; margin-right: 6px; }
+[dir="rtl"] .exp-card__shield { right: auto; left: 22px; }
+[dir="rtl"] .to-top { right: auto; left: 24px; }
+[dir="rtl"] .lightbox__close { right: auto; left: 28px; }
+[dir="rtl"] .nav__link--cta { margin-left: 0; margin-right: 6px; }
+[dir="rtl"] .ticklist li { padding-left: 0; padding-right: 24px; }
+[dir="rtl"] .ticklist li::before { left: auto; right: 0; }
+[dir="rtl"] .btn:hover svg { transform: translateX(-4px); }
+[dir="rtl"] .hero__socials a::after { left: auto; right: 0; }
+
 /* ====================== REDUCED MOTION ====================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }

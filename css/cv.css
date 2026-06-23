@@ -122,9 +122,18 @@ body {
   html, body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
   .toolbar { display: none !important; }
   .sheet {
-    width: 210mm; min-height: 297mm; margin: 0; border-radius: 0;
+    width: 210mm; min-height: 0; height: auto; margin: 0; border-radius: 0;
     box-shadow: none; page-break-after: avoid;
   }
+  /* keep everything on a single page */
+  .sheet, .side, .main, .main__block, .side__block, .entry {
+    page-break-inside: avoid; break-inside: avoid;
+  }
+  /* lightly tighten spacing so it comfortably fits one page */
+  .main { padding: 12mm 12mm; }
+  .side { padding: 12mm 9mm; }
+  .main__block { margin-bottom: 5mm; }
+  .side__block { margin-bottom: 5mm; }
   * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
 }
 
