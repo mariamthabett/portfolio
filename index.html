@@ -85,9 +85,9 @@
               View My Work
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <!-- CV download — links to copied PDF in /cv -->
-            <a href="cv/mariamthabetCV.pdf" download class="btn btn--ghost">
-              Download CV
+            <!-- One-page web CV — opens in a new tab; user prints to PDF -->
+            <a href="cv.html" target="_blank" rel="noopener" class="btn btn--ghost">
+              View CV
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
             </a>
           </div>
@@ -199,7 +199,7 @@
               </p>
             </div>
 
-            <figure class="journey__photo glass" data-reveal>
+            <figure class="journey__photo framed" data-reveal>
               <!-- Insert Image Here: graduation photo -> images/graduation.png -->
               <img src="images/graduation.png" alt="Mariam at her university graduation" loading="lazy" />
               <figcaption>Graduation — Ain Shams University</figcaption>
@@ -236,7 +236,7 @@
               </p>
             </div>
 
-            <figure class="journey__photo glass" data-reveal>
+            <figure class="journey__photo framed" data-reveal>
               <!-- Insert Image Here: volleyball / league photo -> images/volleyball.jpeg -->
               <img src="images/volleyball.jpeg" alt="Mariam playing volleyball in a league match" loading="lazy" />
               <figcaption>League match action</figcaption>
@@ -301,15 +301,15 @@
 
             <div class="project__gallery">
               <!-- Insert Image Here: auction screenshots -> images/auction-*.png -->
-              <button class="shot" data-lightbox="images/auction-home.png" aria-label="Open home screen screenshot">
+              <button class="shot framed" data-lightbox="images/auction-home.png" aria-label="Open home screen screenshot">
                 <img src="images/auction-home.png" alt="Auction app — home screen" loading="lazy" />
                 <span class="shot__cap">Home</span>
               </button>
-              <button class="shot" data-lightbox="images/auction-products.png" aria-label="Open products screen screenshot">
+              <button class="shot framed" data-lightbox="images/auction-products.png" aria-label="Open products screen screenshot">
                 <img src="images/auction-products.png" alt="Auction app — products screen" loading="lazy" />
                 <span class="shot__cap">Products</span>
               </button>
-              <button class="shot" data-lightbox="images/auction-livechat.png" aria-label="Open live chat screenshot">
+              <button class="shot framed" data-lightbox="images/auction-livechat.png" aria-label="Open live chat screenshot">
                 <img src="images/auction-livechat.png" alt="Auction app — live chat screen" loading="lazy" />
                 <span class="shot__cap">Live Chat</span>
               </button>
@@ -446,15 +446,16 @@
           <div class="resume__cta">
             <h3>Get the full picture</h3>
             <p>
-              Download my complete CV — education, technical skills, trainings, work experience,
-              languages, and activities, all in one place.
+              A clean, one-page CV — education, technical skills, trainings, experience, languages,
+              and activities, all at a glance. Opens in a new tab; use <strong>Print → Save as
+              PDF</strong> to download it.
             </p>
-            <!-- CV download — replace cv/mariamthabetCV.pdf to update -->
-            <a href="cv/mariamthabetCV.pdf" download class="btn btn--primary btn--lg">
-              Download CV (PDF)
+            <!-- One-page web CV (cv.html). Original PDF kept as a fallback below. -->
+            <a href="cv.html" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+              View / Download CV
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
             </a>
-            <a href="cv/mariamthabetCV.pdf" target="_blank" rel="noopener" class="resume__view">or view in browser ↗</a>
+            <a href="cv/mariamthabetCV.pdf" download class="resume__view">or download the original PDF ↓</a>
           </div>
         </div>
       </div>

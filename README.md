@@ -3,18 +3,21 @@
 A personal portfolio website for **Mariam Ahmed Thabet** — Computers & Information graduate,
 national volleyball athlete, and tech & marketing enthusiast.
 
-Built as a fast, zero-build static site with **HTML + CSS + vanilla JavaScript**. Features a dark
-glassmorphism design, scroll-reveal animations (Intersection Observer), smooth scrolling, animated
-stat counters, a project lightbox, and a responsive mobile nav.
+Built as a fast, zero-build static site with **HTML + CSS + vanilla JavaScript**. Features a
+**Royal Plum & Champagne** dark glassmorphism theme, scroll-reveal animations (Intersection
+Observer), smooth scrolling, animated stat counters, **animated gradient-framed photos**, a project
+lightbox, a responsive mobile nav, and a one-page web CV you can print to PDF.
 
 ## Structure
 
 ```
 index.html            # all sections (hero, about, journey, projects, experience, resume, contact)
+cv.html               # one-page web CV (Print → Save as PDF)
 css/style.css         # design system, components, animations
+css/cv.css            # one-page CV styles (screen + print)
 js/main.js            # scroll reveal, nav, scroll-spy, counters, lightbox, contact form
 images/               # profile, graduation, volleyball + auction screenshots
-cv/mariamthabetCV.pdf # downloadable CV
+cv/mariamthabetCV.pdf # original CV PDF (fallback download)
 ```
 
 ## Run locally
@@ -30,6 +33,10 @@ python -m http.server 8000
 
 ## Editing content
 
+- **CV:** the live CV is `cv.html` (edit the text directly there; open it and use Print → Save as
+  PDF to export a one-page PDF). The old `cv/mariamthabetCV.pdf` remains as a fallback download.
+- **Theme colors:** all colors are CSS variables in `:root` at the top of `css/style.css`
+  (`--violet`, `--gold`, `--rose`, backgrounds) — change them once to re-skin the whole site.
 - **Photos / CV:** replace the files in `images/` and `cv/` (keep the same names), or update the
   paths in `index.html`. Spots to swap are marked with `<!-- Insert Image Here -->` comments.
 - **Volleyball details, stat numbers, project architecture, project links:** marked as editable
