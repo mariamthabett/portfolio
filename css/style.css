@@ -46,7 +46,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 
 body {
   font-family: var(--font);
@@ -519,6 +519,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
 /* ====================== RESPONSIVE ====================== */
+/* Long unbreakable tokens (emails, URLs, long words) must wrap, never overflow. */
+.hero__title, .section__title, .project__title, .project__desc,
+.contact__link, .contact__value { overflow-wrap: break-word; word-break: break-word; }
+
 @media (max-width: 980px) {
   .hero__inner { grid-template-columns: 1fr; text-align: center; gap: 50px; }
   .hero__headline { justify-content: center; }
@@ -547,12 +551,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .nav__link { padding: 14px 10px; font-size: 1rem; border-radius: 10px; }
   .nav__link::after { display: none; }
   .nav__link--cta { margin: 8px 0 0; text-align: center; }
-  .nav__toggle { display: flex; }
+  .nav__toggle { display: flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
   .project__cols { grid-template-columns: 1fr; }
   .project__gallery { grid-template-columns: repeat(3, 1fr); }
   .avatar__badge--1 { left: 0; }
   .avatar__badge--2 { right: 0; }
   .section__head { margin-bottom: 40px; }
+  /* 16px inputs prevent iOS Safari from auto-zooming on focus. */
+  .field input, .field textarea { font-size: 16px; }
 }
 
 @media (max-width: 420px) {
@@ -560,6 +566,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .project, .meta-card, .contact__form { padding: 22px; }
   .about__stats { grid-template-columns: 1fr; }
   .project__gallery { grid-template-columns: 1fr 1fr; }
+}
+
+/* Small phones (≤360px): tighten type & spacing so nothing crowds or clips. */
+@media (max-width: 360px) {
+  .container { padding: 0 14px; }
+  .hero__title { font-size: clamp(2.05rem, 11vw, 2.7rem); }
+  .section__title { font-size: clamp(1.6rem, 7vw, 1.9rem); }
+  .section { padding: 64px 0; }
+  .project__gallery { grid-template-columns: 1fr; }
+  .project, .meta-card, .contact__form { padding: 18px; }
 }
 
 /* ====================== LANGUAGE TOGGLE ====================== */

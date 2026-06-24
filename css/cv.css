@@ -144,3 +144,10 @@ body {
   .main { padding: 26px 22px; }
   .two-col { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 400px) {
+  body { padding: 20px 12px 40px; }
+  .toolbar { justify-content: center; text-align: center; }
+  .side { padding: 24px 18px; }
+  .main { padding: 22px 18px; }
+}
