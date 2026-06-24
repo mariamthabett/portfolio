@@ -4,8 +4,9 @@
   "private": true,
   "description": "Personal portfolio for Mariam Ahmed Thabet, with a Nodemailer contact API.",
   "scripts": {
-    "dev": "vercel dev",
-    "start": "vercel dev"
+    "local": "node dev-server.js",
+    "dev": "node dev-server.js",
+    "start": "node dev-server.js"
   },
   "dependencies": {
     "nodemailer": "^6.9.14"

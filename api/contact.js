@@ -37,7 +37,8 @@ module.exports = async (req, res) => {
     }
 
     const user = process.env.GMAIL_USER;
-    const pass = process.env.GMAIL_APP_PASSWORD;
+    // Gmail shows the App Password as 4 space-separated groups; strip any spaces.
+    const pass = (process.env.GMAIL_APP_PASSWORD || "").replace(/\s+/g, "");
     const to = process.env.CONTACT_TO || "mariamthabet2003@gmail.com";
 
     if (!user || !pass) {
