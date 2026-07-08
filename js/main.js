@@ -56,6 +56,38 @@
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
   }
 
+  /* ---------- Theme toggle (light / dark) ---------- */
+  const themeBtn = $("#themeToggle");
+  const themeMeta = $("#themeColorMeta");
+  function currentTheme() {
+    return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  }
+  function setThemeLabel(mode) {
+    if (!themeBtn) return;
+    const ar = window.__lang === "ar";
+    themeBtn.setAttribute(
+      "aria-label",
+      mode === "light"
+        ? (ar ? "التبديل إلى الوضع الداكن" : "Switch to dark mode")
+        : (ar ? "التبديل إلى الوضع الفاتح" : "Switch to light mode")
+    );
+  }
+  function applyTheme(mode) {
+    document.documentElement.setAttribute("data-theme", mode);
+    if (themeMeta) themeMeta.setAttribute("content", mode === "light" ? "#f6f2fb" : "#14101f");
+    if (themeBtn) themeBtn.setAttribute("aria-pressed", String(mode === "light"));
+    try { localStorage.setItem("theme", mode); } catch (e) { /* ignore */ }
+    setThemeLabel(mode);
+  }
+  if (themeBtn) {
+    setThemeLabel(currentTheme());
+    themeBtn.setAttribute("aria-pressed", String(currentTheme() === "light"));
+    themeBtn.addEventListener("click", () =>
+      applyTheme(currentTheme() === "light" ? "dark" : "light"));
+    // keep the aria-label localized when the language flips
+    document.addEventListener("langchange", () => setThemeLabel(currentTheme()));
+  }
+
   /* ---------- Reveal on scroll (Intersection Observer) ---------- */
   const revealEls = $$("[data-reveal]");
   if (prefersReduced || !("IntersectionObserver" in window)) {
@@ -147,14 +179,35 @@
     sections.forEach((s) => spyObs.observe(s));
   }
 
-  /* ---------- Lightbox for project screenshots ---------- */
+  /* ---------- Lightbox for project screenshots (gallery w/ prev-next) ---------- */
   const lightbox = $("#lightbox");
   const lightboxImg = $("#lightboxImg");
   const lightboxClose = $("#lightboxClose");
-  function openLightbox(src, alt) {
+  const lightboxPrev = $("#lightboxPrev");
+  const lightboxNext = $("#lightboxNext");
+
+  let gallery = [];   // [{ src, alt }]
+  let gIndex = 0;
+
+  function renderLightbox() {
+    const item = gallery[gIndex];
+    if (!item || !lightboxImg) return;
+    lightboxImg.src = item.src;
+    lightboxImg.alt = item.alt || "Enlarged screenshot";
+    const multi = gallery.length > 1;
+    if (lightboxPrev) lightboxPrev.style.display = multi ? "" : "none";
+    if (lightboxNext) lightboxNext.style.display = multi ? "" : "none";
+  }
+  function openGallery(btn) {
     if (!lightbox || !lightboxImg) return;
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || "Enlarged screenshot";
+    const scope = btn.closest(".project__gallery") || document;
+    const btns = $$("[data-lightbox]", scope);
+    gallery = btns.map((b) => {
+      const im = $("img", b);
+      return { src: b.getAttribute("data-lightbox"), alt: im ? im.alt : "" };
+    });
+    gIndex = Math.max(0, btns.indexOf(btn));
+    renderLightbox();
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -165,16 +218,24 @@
     lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
-  $$("[data-lightbox]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const src = btn.getAttribute("data-lightbox");
-      const img = $("img", btn);
-      openLightbox(src, img ? img.alt : "");
-    });
-  });
+  function step(dir) {   // dir: -1 prev, +1 next
+    if (!gallery.length) return;
+    gIndex = (gIndex + dir + gallery.length) % gallery.length;
+    renderLightbox();
+  }
+  $$("[data-lightbox]").forEach((btn) =>
+    btn.addEventListener("click", () => openGallery(btn)));
   if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener("click", () => step(-1));
+  if (lightboxNext) lightboxNext.addEventListener("click", () => step(1));
   if (lightbox) lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox || !lightbox.classList.contains("open")) return;
+    if (e.key === "Escape") { closeLightbox(); return; }
+    const rtl = document.documentElement.dir === "rtl";
+    if (e.key === "ArrowRight") step(rtl ? -1 : 1);
+    else if (e.key === "ArrowLeft") step(rtl ? 1 : -1);
+  });
 
   /* ---------- Contact form (posts to /api/contact — Nodemailer) ---------- */
   const form = $("#contactForm");
