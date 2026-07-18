@@ -108,7 +108,7 @@
       "exp.now": "Current",
       "exp.c1.meta": "Professional role · ongoing",
       "exp.c1.desc":
-        "Currently growing my career at <strong>Evolve</strong> while sharpening my edge with a " +
+        "Currently growing my career at <strong>Devolva Technologies</strong> while sharpening my edge with a " +
         "professional <strong>Digital Marketing</strong> course — pairing technical depth with " +
         "modern marketing skills.",
       "exp.chip1": "Digital Marketing Course",
@@ -271,7 +271,7 @@
       "exp.now": "حالياً",
       "exp.c1.meta": "دور مهني · مستمر",
       "exp.c1.desc":
-        "أطوّر مسيرتي حاليًا في <strong>Evolve</strong> مع صقل مهاراتي عبر دورة احترافية في " +
+        "أطوّر مسيرتي حاليًا في <strong>Devolva Technologies</strong> مع صقل مهاراتي عبر دورة احترافية في " +
         "<strong>التسويق الرقمي</strong> — بدمج العمق التقني بمهارات التسويق الحديثة.",
       "exp.chip1": "دورة تسويق رقمي",
       "exp.chip2": "تعلّم مستمر",
